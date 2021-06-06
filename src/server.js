@@ -1,7 +1,13 @@
 const express = require("express");
 const path = require("path");
 
+const db = require("./database");
+const routes = require("./routes");
+
 const app = express();
+
+// Conectando bando de dados MongoDB
+db.connectMongoDB();
 
 // definindo o template engine
 app.set("view engine", "ejs");
@@ -13,12 +19,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // definindo que o servidor vai receber dados de forms enviados pelo método POST
 app.use(express.urlencoded({ extended: true }));
 
-// rotas
-app.get("/", (req, res) => {
-  res.render("index", {
-    title: "Projeto CRUD",
-  });
-});
+// definindo rotas atendidas pelo servidor
+app.use("/", routes);
 
 // 404 error
 app.use((req, res) => {
