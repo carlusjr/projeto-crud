@@ -1,3 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 10px 0 0px 20px;
+}
+
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: gray;  
+}
+
+nav ul li {   
+  list-style: none;  
+  padding: 20px;
+}
+
+nav ul li:hover {   
+  background-color: rgb(170, 165, 165);
+}
+
+nav ul li a {   
+  text-decoration: none;  
+}
+
+
 body {
   background-color: silver;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+body ul {
+  margin: 10px;
+}
+
+form {
+  padding: 20px;
+  margin: 20px 0 20px 50px;
+}
+
+form input {
+  padding: 5px;
+  margin-top: 5px;
+  width: 40%;
+}
+
+form button {
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: bold;
 }

@@ -3,14 +3,20 @@
 <%- include('partials/head.ejs') %>
 <body>
   <h1><%= title %> </h1>
+  <%- include('partials/header.ejs') %>
+
+  <% if (typeof message !== 'undefined') { %>
+    <%= message  %>    
+  <% } %>
+
   <form action="/register/add" method="POST">
     <div>
       <label>Nome</label>
-      <input type="text" name="name" placeholder="Digite seu nome">
+      <input type="text" name="name" placeholder="Digite seu nome" required>
     </div>
     <div>
       <label>E-mail</label>
-      <input type="text" name="email" placeholder="Digite seu e-mail">
+      <input type="text" name="email" placeholder="Digite seu e-mail" required>
     </div>
     <div>
       <label>Idade</label>
@@ -18,9 +24,9 @@
     </div>
     <div>
       <label>Senha</label>
-      <input type="password" name="password" placeholder="Digite sua senha">
+      <input type="password" name="password" placeholder="Digite sua senha" required>
     </div>
-    <button type="submit">Cadastrar</button>
+    <button type="submit">Cadastrar</button><br>    
   </form>
 
   <%- include('partials/foot.ejs') %> 
